@@ -109,13 +109,12 @@ data/vspw/VSPW_480p/
 
 ## 3. Checkpoints
 
-| file | what it is |
-|---|---|
-| `checkpoints/ditta_segformer_b5_vspw.pth` | SegFormer MiT-B5 trained on the VSPW train split, frame-wise (the ISS model DiTTA adapts) |
-| `checkpoints/sam2_hiera_large.pt` | stock SAM2 weights, from the SAM2 repo |
+| file | what it is | where to get it |
+|---|---|---|
+| `checkpoints/ditta_segformer_b5_vspw.pth` | SegFormer MiT-B5 trained on the VSPW train split, frame-wise (the ISS model DiTTA adapts) | [Google Drive](https://drive.google.com/file/d/1Afjx_3C1FlxMnQ4C5H8-5MpP_q2ek2nE/view?usp=drive_link) (330 MB) |
+| `checkpoints/sam2_hiera_large.pt` | stock SAM2 weights | the SAM2 repo (see above) |
 
-Download the DiTTA checkpoint from the [release page](https://github.com/jihun1998/DiTTA/releases)
-and put it in `checkpoints/`.
+Download the ISS checkpoint and put it in `checkpoints/`.
 
 To convert your own ISS checkpoint instead, use
 [`tools/prepare_checkpoint.py`](tools/prepare_checkpoint.py):
