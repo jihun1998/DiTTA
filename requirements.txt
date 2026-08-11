@@ -1,0 +1,9 @@
+# DiTTA runtime dependencies.
+# torch / torchvision are installed through conda (see README.md), and SAM2 is
+# installed from its own repository with `pip install -e .`.
+timm==1.0.9
+opencv-python==4.10.0.84
+scipy==1.15.2
+numpy
+pillow
+tqdm

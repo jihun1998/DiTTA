@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+
+# datasets are symlinked in, never committed
+data/
+
+# model weights: see README.md for where to get them
+checkpoints/*.pt
+checkpoints/*.pth
+!checkpoints/ditta_addon_paper_init.pth
+
+# run outputs
+exps/
+*.log
