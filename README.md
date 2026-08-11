@@ -111,7 +111,7 @@ data/vspw/VSPW_480p/
 
 | file | what it is | where to get it |
 |---|---|---|
-| `checkpoints/ditta_segformer_b5_vspw.pth` | SegFormer MiT-B5 trained on the VSPW train split, frame-wise (the ISS model DiTTA adapts) | [Google Drive](https://drive.google.com/file/d/1Afjx_3C1FlxMnQ4C5H8-5MpP_q2ek2nE/view?usp=drive_link) (330 MB) |
+| `checkpoints/ditta_segformer_b5_vspw.pth` | SegFormer MiT-B5 trained on the VSPW train split, frame-wise (the ISS model DiTTA adapts) | [Google Drive](https://drive.google.com/file/d/1Afjx_3C1FlxMnQ4C5H8-5MpP_q2ek2nE) (330 MB) |
 | `checkpoints/sam2_hiera_large.pt` | stock SAM2 weights | the SAM2 repo (see above) |
 
 Download the ISS checkpoint and put it in `checkpoints/`.
