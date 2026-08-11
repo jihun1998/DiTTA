@@ -4,6 +4,7 @@
 timm==1.0.9
 opencv-python==4.10.0.84
 scipy==1.15.2
+tensorboard
 numpy
 pillow
 tqdm

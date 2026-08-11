@@ -51,12 +51,15 @@ conda create -n ditta python=3.10.14 -y
 conda activate ditta
 
 conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 \
-              pytorch-cuda=12.1 -c pytorch -c nvidia -y
+              pytorch-cuda=12.1 "mkl=2023.1.0" -c pytorch -c nvidia -y
 
 git clone https://github.com/jihun1998/DiTTA.git
 cd DiTTA
 pip install -r requirements.txt
 ```
+
+> The `mkl` pin matters: with mkl 2024 or newer, this build of PyTorch fails to
+> import with `undefined symbol: iJIT_NotifyEvent`.
 
 ### SAM2
 

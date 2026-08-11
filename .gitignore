@@ -4,6 +4,9 @@ __pycache__/
 # datasets are symlinked in, never committed
 data/
 
+# SAM2 is cloned in-tree per the README
+segment-anything-2/
+
 # model weights: see README.md for where to get them
 checkpoints/*.pt
 checkpoints/*.pth
