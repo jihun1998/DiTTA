@@ -194,12 +194,6 @@ VSPW val, SegFormer-B5 ISS model, 10% warm-up (Table 1 of the paper):
 A full run takes roughly 5 hours on one RTX 3090 (~55 s per video), and needs no
 disk space beyond the outputs.
 
-`run_ditta.py` sets `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` before
-importing torch. The add-on's attention matrix is a single 2.5 GiB allocation, and
-without expandable segments a full sweep runs out of contiguous memory on a 24 GB
-card after a couple of hundred videos even though plenty is free. Set the variable
-yourself to override it.
-
 ## 5. Repository layout
 
 ```
