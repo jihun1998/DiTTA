@@ -18,9 +18,16 @@ import os
 import random
 import time
 
-import numpy as np
-import torch
-import tqdm
+# The temporal add-on materialises a (H*W) x (H*W) attention matrix -- 2.5 GiB at
+# VSPW's 480p -- and over a few hundred videos the caching allocator fragments
+# enough that no contiguous block that large is left: a full sweep on a 24 GB card
+# used to die of OOM around video 230 of 343, with memory to spare. Expandable
+# segments fix that. This has to be set before torch is imported.
+os.environ.setdefault('PYTORCH_CUDA_ALLOC_CONF', 'expandable_segments:True')
+
+import numpy as np  # noqa: E402
+import torch  # noqa: E402
+import tqdm  # noqa: E402
 
 from ditta.cache import TargetCache
 from ditta.config import format_config, load_config

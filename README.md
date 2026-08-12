@@ -44,8 +44,8 @@ For every video this runs all four stages back to back, in memory:
 
 ## 1. Environment
 
-Python 3.10 and CUDA 12.1, set up with conda. A single GPU is enough; adaptation
-peaks at about 20 GB of memory.
+Python 3.10 and CUDA 12.1, set up with conda. One 24 GB GPU (e.g. an RTX 3090) is
+enough: adaptation peaks at about 16 GB of allocated memory.
 
 ```bash
 conda create -n ditta python=3.10.14 -y
@@ -191,8 +191,14 @@ VSPW val, SegFormer-B5 ISS model, 10% warm-up (Table 1 of the paper):
 | SegFormer (ISS baseline) | 49.0 | 66.3 | 88.3 | 84.3 |
 | **DiTTA (ours)** | **51.1** | **66.5** | **94.1** | **92.2** |
 
-A full run takes roughly 5 hours on a single GPU (~55 s per video), and needs no
+A full run takes roughly 5 hours on one RTX 3090 (~55 s per video), and needs no
 disk space beyond the outputs.
+
+`run_ditta.py` sets `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` before
+importing torch. The add-on's attention matrix is a single 2.5 GiB allocation, and
+without expandable segments a full sweep runs out of contiguous memory on a 24 GB
+card after a couple of hundred videos even though plenty is free. Set the variable
+yourself to override it.
 
 ## 5. Repository layout
 
