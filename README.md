@@ -44,7 +44,8 @@ For every video this runs all four stages back to back, in memory:
 
 ## 1. Environment
 
-Python 3.10 and CUDA 12.1, set up with conda. One RTX 3090 (24 GB) is enough.
+Python 3.10 and CUDA 12.1, set up with conda. A single GPU is enough; adaptation
+peaks at about 20 GB of memory.
 
 ```bash
 conda create -n ditta python=3.10.14 -y
@@ -190,7 +191,7 @@ VSPW val, SegFormer-B5 ISS model, 10% warm-up (Table 1 of the paper):
 | SegFormer (ISS baseline) | 49.0 | 66.3 | 88.3 | 84.3 |
 | **DiTTA (ours)** | **51.1** | **66.5** | **94.1** | **92.2** |
 
-A full run takes roughly 5 hours on one RTX 3090 (~55 s per video), and needs no
+A full run takes roughly 5 hours on a single GPU (~55 s per video), and needs no
 disk space beyond the outputs.
 
 ## 5. Repository layout
