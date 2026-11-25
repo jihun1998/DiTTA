@@ -220,12 +220,12 @@ tools/
 ## Citation
 
 ```bibtex
-@inproceedings{kim2026ditta,
-  title     = {Bootstrapping Video Semantic Segmentation Model via
-               Distillation-assisted Test-Time Adaptation},
-  author    = {Kim, Jihun and Kwon, Hoyong and Kweon, Hyeokjun and Yoon, Kuk-Jin},
-  booktitle = {CVPR},
-  year      = {2026}
+@InProceedings{kim2026ditta,
+    author    = {Kim, Jihun and Kwon, Hoyong and Kweon, Hyeokjun and Yoon, Kuk-Jin},
+    title     = {Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year      = {2026},
+    pages     = {10766-10777}
 }
 ```
 
